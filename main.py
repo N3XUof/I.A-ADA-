@@ -25,12 +25,15 @@ def executa_comando():
 
     return comando
 
+# os comandos de voz podem ser modificados
+#quantas horas são
 def comando_voz_usuario():
     comando = executa_comando()
     if 'horas' in comando:
         hora = datetime.datetime.now().strftime('%H:%M')
         maquina.say('Agora são' + hora)
         maquina.runAndWait()
+    #pesquisa na wikipedia
     elif 'procure por' in comando:
         procurar = comando.replace('procure por', '')
         wikipedia.set_lang('pt')
@@ -38,6 +41,7 @@ def comando_voz_usuario():
         print(resultado)
         maquina.say(resultado)
         maquina.runAndWait()
+    #tocar musica no youtube
     elif 'toque' in comando:
         musica = comando.replace('toque','')
         resultado = pywhatkit.playonyt(musica)
