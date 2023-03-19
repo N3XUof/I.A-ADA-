@@ -1,3 +1,4 @@
+#recomendo transformar o .py em .bat, não se preocupe! o app continua funcionando sem defeitos.
 import datetime
 import pyttsx3
 import pywhatkit
